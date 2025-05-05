@@ -6,7 +6,6 @@ import java.math.BigDecimal;
 import java.sql.Timestamp;
 
 public record PizzaDTO(
-        @NotNull
         Long id,
 
         @NotBlank

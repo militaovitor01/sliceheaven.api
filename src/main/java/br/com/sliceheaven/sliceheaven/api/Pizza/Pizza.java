@@ -30,6 +30,7 @@ public class Pizza {
     private BigDecimal rating;
     private Integer discount;
     private Timestamp createdAt;
+    private Boolean active= false;
 
     public Pizza(PizzaDTO data) {
         this.id = data.id();
@@ -43,6 +44,24 @@ public class Pizza {
         this.rating = data.rating();
         this.discount = data.discount();
         this.createdAt = data.createdAt();
+        this.active = true;
     }
 
+    public void updateData(PizzaUpdateDTO data) {
+        if(data.name() != null) {
+            this.name = data.name();
+        }
+
+        if(data.price() != null) {
+            this.price = data.price();
+        }
+
+        if(data.discount() != null){
+            this.discount = data.discount();
+        }
+    }
+
+    public void delete() {
+        this.active = false;
+    }
 }
