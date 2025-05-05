@@ -1,18 +1,3 @@
--- Tabela de pizzas
-CREATE TABLE IF NOT EXISTS pizzas (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    description TEXT,
-    price DECIMAL(10,2) NOT NULL,
-    image_url TEXT,
-    category VARCHAR(50) DEFAULT 'pizza',
-    sub_category VARCHAR(50),
-    featured BOOLEAN DEFAULT FALSE,
-    rating DECIMAL(2,1),
-    discount INTEGER,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB;
-
 -- Inserir dados das pizzas
 INSERT INTO pizzas (name, description, price, image_url, category, sub_category, featured, rating, discount, created_at) VALUES
 ('Margherita', 'Classic pizza with tomato sauce, mozzarella, and fresh basil.', 12.99, 'https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', 'pizza', 'Classic', true, 4.8, NULL, NOW()),
@@ -24,30 +9,16 @@ INSERT INTO pizzas (name, description, price, image_url, category, sub_category,
 ('Buffalo Chicken', 'Spicy buffalo chicken with blue cheese and mozzarella.', 15.99, 'https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', 'pizza', 'Special', false, 4.4, NULL, NOW()),
 ('Four Cheese', 'Rich blend of mozzarella, cheddar, provolone, and parmesan cheeses.', 13.99, 'https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', 'pizza', 'Vegetarian', true, 4.7, NULL, NOW());
 
--- Tabela de sobremesas
-CREATE TABLE IF NOT EXISTS desserts (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    description TEXT,
-    price DECIMAL(10,2) NOT NULL,
-    image_url TEXT,
-    category VARCHAR(50) DEFAULT 'dessert',
-    featured BOOLEAN DEFAULT FALSE,
-    discount INTEGER,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB;
+-- Inserir dados das sobremesas
+INSERT INTO desserts (name, description, price, image_url, category, featured, discount, created_at) VALUES
+('Chocolate Brownie', 'Warm chocolate brownie served with vanilla ice cream.', 8.99, 'https://images.pexels.com/photos/45202/brownie-dessert-cake-sweet-45202.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', 'dessert', true, NULL, NOW()),
+('Tiramisu', 'Classic Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cream.', 9.99, 'https://images.pexels.com/photos/2144112/pexels-photo-2144112.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', 'dessert', true, NULL, NOW()),
+('Cheesecake', 'Creamy New York style cheesecake with berry compote.', 7.99, 'https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', 'dessert', false, 15, NOW()),
+('Ice Cream Sundae', 'Three scoops of ice cream with chocolate sauce, whipped cream, and a cherry.', 6.99, 'https://images.pexels.com/photos/1352281/pexels-photo-1352281.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', 'dessert', false, NULL, NOW());
 
-
--- Tabela de bebidas
-CREATE TABLE IF NOT EXISTS drinks (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    description TEXT,
-    price DECIMAL(10,2) NOT NULL,
-    image_url TEXT,
-    category VARCHAR(50) DEFAULT 'drink',
-    featured BOOLEAN DEFAULT FALSE,
-    discount INTEGER,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB;
-
+-- Inserir dados das bebidas
+INSERT INTO drinks (name, description, price, image_url, category, featured, discount, created_at) VALUES
+('Coca-Cola', 'Classic carbonated soft drink.', 3.99, 'https://images.pexels.com/photos/50593/coca-cola-cold-drink-soft-drink-coke-50593.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', 'drink', true, NULL, NOW()),
+('Sprite', 'Lemon-lime flavored carbonated drink.', 3.99, 'https://images.pexels.com/photos/50593/coca-cola-cold-drink-soft-drink-coke-50593.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', 'drink', false, NULL, NOW()),
+('Orange Juice', 'Fresh squeezed orange juice.', 4.99, 'https://images.pexels.com/photos/42059/citrus-diet-food-fresh-42059.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', 'drink', true, NULL, NOW()),
+('Lemonade', 'Fresh squeezed lemonade with mint.', 4.49, 'https://images.pexels.com/photos/42059/citrus-diet-food-fresh-42059.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', 'drink', false, 10, NOW()); 
