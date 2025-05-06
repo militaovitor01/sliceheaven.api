@@ -30,7 +30,7 @@ public class Pizza {
     private BigDecimal rating;
     private Integer discount;
     private Timestamp createdAt;
-    private Boolean active= false;
+    private Boolean active= true;
 
     public Pizza(PizzaDTO data) {
         this.id = data.id();
