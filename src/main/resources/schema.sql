@@ -1,3 +1,14 @@
+-- Tabela de usuários em MySQL
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password_hash VARCHAR(255) NOT NULL,
+    address TEXT,
+    phone VARCHAR(20),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 -- Tabela de pizzas
 CREATE TABLE IF NOT EXISTS pizzas (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,

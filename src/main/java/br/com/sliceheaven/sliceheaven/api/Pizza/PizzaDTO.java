@@ -26,6 +26,7 @@ public record PizzaDTO(
         Integer discount,
         Timestamp createdAt
 ) {
+
     public PizzaDTO(Pizza pizza) {
         this(
                 pizza.getId(),
