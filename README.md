@@ -21,7 +21,8 @@ API RESTful para gerenciamento de uma pizzaria, incluindo pizzas, bebidas e sobr
 1. Clone o repositório
 2. Configure o banco de dados PostgreSQL
 3. Configure as variáveis de ambiente no arquivo `application.properties`
-4. Execute o projeto usando Maven:
+4. Por padrão, no arquivo application.properties, user está configurado como 'root' e password como 'password'. Você deve trocar para as suas configurações padrão do MySQL locamente.
+5. Execute o projeto usando Maven:
 ```bash
 mvn spring-boot:run
 ```
